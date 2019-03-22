@@ -38,6 +38,15 @@ server <- function(input, output) {
     }
   })
   
+  # Generate a summary of the data ----
+  output$summary <- renderPrint({
+    summary(wine)
+  })
+  
+  # Generate an HTML table view of the data ----
+  output$table <- renderTable({
+    wine
+  })
 
   
 }
